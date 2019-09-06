@@ -15,6 +15,18 @@ const genreSchema = new Schema({
       type: String,
       required: true,
   },
+  works: [
+    {
+    type: Schema.Types.ObjectId,
+    ref: 'Work',
+    }
+  ],
+  artists: [
+    {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    }
+  ],
 });
 
 const Genre = mongoose.model('Genre', genreSchema);

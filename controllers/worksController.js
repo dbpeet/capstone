@@ -1,8 +1,9 @@
 const db = require('../models');
 
 const show = (req, res) => {
-  db.Work.findById(req.params.id, (err, foundWork) => {
-    if (err) return res.status(500).json({ status: 500, message: 'Something went wrong. Please try again' });
+    db.Work.findById(req.params.id).populate('genres artist')
+    .exec((err, foundWork) => {
+        if (err) return res.status(500).json({ status: 500, message: 'Something went wrong. Please try again' });
 
     res.status(200).json({ status: 200, data: foundWork });
   });

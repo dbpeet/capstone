@@ -33,6 +33,10 @@ const workSchema = new Schema({
       ref: 'Genre',
     }
   ],
+  artist: {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+  },
 });
 
 const Work = mongoose.model('Work', workSchema);
