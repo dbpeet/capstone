@@ -45,14 +45,14 @@ app.get('/', (req, res) => res.send('<h1>Welcome to Auth API</h1>'));
 // Auth Routes
 app.use('/api/v1/auth', routes.auth);
 
-// Users Routes
-app.use('/api/v1/users', routes.users);
+// // Users Routes
+// app.use('/api/v1/users', routes.users);
 
-// Cities Route
-app.use('/api/v1/cities', routes.city);
+// // Cities Route
+// app.use('/api/v1/cities', routes.city);
 
-// Posts Route
-app.use('/api/v1/post', routes.post);
+// // Posts Route
+// app.use('/api/v1/post', routes.post);
 
 
 // ---------------------------------------- START SERVER ---------------------------------------- //

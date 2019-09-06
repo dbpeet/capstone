@@ -22,31 +22,31 @@ const userSchema = new Schema({
     },
     is_artist: {
         type: Boolean,
-        required: true,
+        default: false,
     },
     followed_artists: [
-    {
+        {
         type: Schema.Types.ObjectId,
         ref: 'User',
-    }
+        }
     ],
     followed_genres: [
-    {
+        {
         type: Schema.Types.ObjectId,
         ref: 'Genre',
-    }
+        }
     ],
     work_genres: [
-    {
+        {
         type: Schema.Types.ObjectId,
         ref: 'Genre',
-    }
+        }
     ],
     works: [
-    {
+        {
         type: Schema.Types.ObjectId,
         ref: 'Work',
-    }
+        }
     ],
     links: {
         type: [ String ]

@@ -32,7 +32,7 @@ const workSchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: 'Genre',
     }
-    ],
+  ],
 });
 
 const Work = mongoose.model('Work', workSchema);

@@ -32,22 +32,22 @@ const eventSchema = new Schema({
   artist: {
       type: Schema.Types.ObjectId,
       ref: 'User',
-    },
+  },
   audience: [
     {
       type: Schema.Types.ObjectId,
       ref: 'User',
     }
-    ],
+  ],
   genres: [
     {
       type: Schema.Types.ObjectId,
       ref: 'Genre',
     }
-    ],
+  ],
 
 });
 
-const Event = mongoose.model('Event', postSchema);
+const Event = mongoose.model('Event', eventSchema);
 
 module.exports = Event;
