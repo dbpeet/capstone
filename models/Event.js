@@ -23,11 +23,11 @@ const eventSchema = new Schema({
   },
   start_time: {
     type: Date,
-    required: true,
+    required: false,
   },
   end_time: {
     type: Date,
-    required: true,
+    required: false,
   },
   artist: {
       type: Schema.Types.ObjectId,

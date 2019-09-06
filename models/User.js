@@ -30,10 +30,28 @@ const userSchema = new Schema({
         ref: 'User',
         }
     ],
+    audience: [
+        {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        }
+    ],
     followed_genres: [
         {
         type: Schema.Types.ObjectId,
         ref: 'Genre',
+        }
+    ],
+    followed_events: [
+        {
+        type: Schema.Types.ObjectId,
+        ref: 'Event',
+        }
+    ],
+    hosted_events: [
+        {
+        type: Schema.Types.ObjectId,
+        ref: 'Event',
         }
     ],
     work_genres: [
@@ -48,6 +66,7 @@ const userSchema = new Schema({
         ref: 'Work',
         }
     ],
+
     links: {
         type: [ String ]
     },
