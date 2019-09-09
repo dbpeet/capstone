@@ -20,17 +20,20 @@ const index = (req, res) => {
 const create = (req, res) => {
     db.Work.create(req.body, (error, createdWork) => {
         if (error) return res.status(500).json({ status: 500, message: 'Something went wrong. Please try again' });
+
         db.User.findById(
-            req.body.artist, (error, foundUser)=>{
-                foundUser.works.push(createdWork._id)
-                foundUser.work_genres.push(req.body.genre)
-                foundUser.save()
+            req.body.artist, ((error, foundUser)=>{
+                foundUser.works.push(createdWork._id);
+                foundUser.work_genres.push(req.body.genre);
+                foundUser.save();
             }
-        )
-        db.Genre.updateOne(
-            { _id : req.body.genre},
-            {$push: { works: createdWork._id, artists: req.body.artist }}
-        )
+        ));
+        db.Genre.findById(
+            req.body.genre, ((error, foundGenre)=>{
+                foundGenre.works.push(createdWork._id);
+                foundGenre.artists.push(req.body.artist);foundGenre.save();
+            }
+        ));
 
         res.status(200).json({ status: 200, data: createdWork });
     });
