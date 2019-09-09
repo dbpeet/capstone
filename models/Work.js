@@ -27,12 +27,11 @@ const workSchema = new Schema({
     type: Date,
     default: Date.now,
   },
-  genres: [
+  genre: 
     {
       type: Schema.Types.ObjectId,
       ref: 'Genre',
-    }
-  ],
+    },
   artist: {
       type: Schema.Types.ObjectId,
       ref: 'User',
