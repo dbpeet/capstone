@@ -20,7 +20,7 @@ const workSchema = new Schema({
   sound_link: {
       type: String,
   },
-  video_link: {
+  video_id: {
       type: String,
   },
   date_posted: {

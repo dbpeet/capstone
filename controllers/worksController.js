@@ -39,9 +39,29 @@ const create = (req, res) => {
     });
     
 };
+const deleteOne = (req, res) => {
+    db.Work.findByIdAndDelete(req.params.id, (err, deletedWork) => {
+        if (err) return res.status(500).json({ status: 500, message: 'Something went wrong. Please try again' });
+    
+        res.status(200).json({ status: 200, data: deletedWork });
+    });
+};
+const deleteAll = (req, res) => {
+    db.Work.deleteMany({}, (err, deletedWorks) => {
+        
+        if (err) throw err
+        // return res.status(500).json({ status: 500, message: 'Something went wrong. Please try again' });
+            
+    
+        res.status(200).json({ status: 200, data: deletedWorks });
+    });
+};
+
 
 module.exports = {
   show,
   index,
   create,
+  deleteOne,
+  deleteAll,
 };

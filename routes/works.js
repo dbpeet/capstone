@@ -13,5 +13,11 @@ router.get('/:id', ctrl.works.show);
 //Create work
 router.post('/', ctrl.works.create);
 
+//Delete work
+router.delete('/:id', ctrl.works.deleteOne)
+
+//Delete all works
+router.purge('/deleteEveryWork', ctrl.works.deleteAll)
+
 
 module.exports = router;
