@@ -47,16 +47,18 @@ const deleteOne = (req, res) => {
     });
 };
 const deleteAll = (req, res) => {
-    db.Work.deleteMany({}, (err, deletedWorks) => {
-        
-        if (err) throw err
-        // return res.status(500).json({ status: 500, message: 'Something went wrong. Please try again' });
-            
-    
+    db.Work.deleteMany({}, (err, deletedWorks) => {  
+        if (err) return res.status(500).json({ status: 500, message: 'Something went wrong. Please try again' });
         res.status(200).json({ status: 200, data: deletedWorks });
     });
 };
 
+const edit = (req, res) => {
+    db.Work.findByIdAndUpdate(req.params._id, req.body,{ new: true }, (err, updatedWork) => {
+        if (err) return res.status(500).json({ status: 500, message: 'Something went wrong. Please try again', });
+        res.status(200).json({ status: 200, data: updatedWork, });
+    });
+};
 
 module.exports = {
   show,
@@ -64,4 +66,5 @@ module.exports = {
   create,
   deleteOne,
   deleteAll,
+  edit,
 };

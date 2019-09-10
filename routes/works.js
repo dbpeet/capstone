@@ -16,6 +16,9 @@ router.post('/', ctrl.works.create);
 //Delete work
 router.delete('/:id', ctrl.works.deleteOne)
 
+//Edit work
+router.put('/:id', ctrl.works.edit);
+
 //Delete all works
 router.purge('/deleteEveryWork', ctrl.works.deleteAll)
 
