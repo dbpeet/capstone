@@ -28,12 +28,12 @@ const create = (req, res) => {
                 foundUser.save();
             }
         ));
-        db.Genre.findById(
-            req.body.genre, ((error, foundGenre)=>{
-                foundGenre.works.push(createdWork._id);
-                foundGenre.artists.push(req.body.artist);foundGenre.save();
-            }
-        ));
+        // db.Genre.findById(
+        //     req.body.genre, ((error, foundGenre)=>{
+        //         foundGenre.works.push(createdWork._id);
+        //         foundGenre.artists.push(req.body.artist);foundGenre.save();
+        //     }
+        // ));
 
         res.status(200).json({ status: 200, data: createdWork });
     });
@@ -42,6 +42,14 @@ const create = (req, res) => {
 const deleteOne = (req, res) => {
     db.Work.findByIdAndDelete(req.params.id, (err, deletedWork) => {
         if (err) return res.status(500).json({ status: 500, message: 'Something went wrong. Please try again' });
+
+        db.User.findById(
+            deletedWork.artist, ((error, foundUser)=>{
+                foundUser.works.remove(deletedWork._id);
+                foundUser.save();
+
+            }
+        ));
     
         res.status(200).json({ status: 200, data: deletedWork });
     });

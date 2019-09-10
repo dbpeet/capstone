@@ -20,7 +20,7 @@ router.delete('/:id', ctrl.works.deleteOne)
 router.put('/:id', ctrl.works.edit);
 
 //Delete all works
-router.purge('/deleteEveryWork', ctrl.works.deleteAll)
+//router.purge('/deleteEveryWork', ctrl.works.deleteAll)
 
 
 module.exports = router;
