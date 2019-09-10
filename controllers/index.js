@@ -4,4 +4,5 @@ module.exports = {
     users: require('./usersController.js'),
     works: require('./worksController.js'),
     genres: require('./genresController.js'),
+    home: require('./homeController'),
   };

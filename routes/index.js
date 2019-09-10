@@ -4,4 +4,5 @@ module.exports = {
     works: require('./works'),
     events: require('./events'),
     genres: require('./genres'),
+    home: require('./home'),
   };
