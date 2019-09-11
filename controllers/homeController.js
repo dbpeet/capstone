@@ -1,7 +1,6 @@
 const db = require('../models');
 
 const index = (req, res) => {
-    console.log("you got to the backend method")
   db.Genre.find({}, (err, foundGenres) => {
     if (err) return res.status(500).json({ status: 500, message: 'Something went wrong. Please try again' });
     db.Work.find({}, (err, foundWorks) => {

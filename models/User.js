@@ -71,7 +71,8 @@ const userSchema = new Schema({
         type: [ String ]
     },
     img_link: {
-        type: String
+        type: String,
+        default: "https://cdn.pixabay.com/photo/2014/04/02/17/07/user-307993_1280.png",
     },
 });
 
