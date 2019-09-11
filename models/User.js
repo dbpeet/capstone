@@ -30,10 +30,28 @@ const userSchema = new Schema({
         ref: 'User',
         }
     ],
+    audience: [
+        {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        }
+    ],
     followed_genres: [
         {
         type: Schema.Types.ObjectId,
         ref: 'Genre',
+        }
+    ],
+    followed_events: [
+        {
+        type: Schema.Types.ObjectId,
+        ref: 'Event',
+        }
+    ],
+    hosted_events: [
+        {
+        type: Schema.Types.ObjectId,
+        ref: 'Event',
         }
     ],
     work_genres: [
@@ -48,11 +66,13 @@ const userSchema = new Schema({
         ref: 'Work',
         }
     ],
+
     links: {
         type: [ String ]
     },
     img_link: {
-        type: String
+        type: String,
+        default: "https://cdn.pixabay.com/photo/2014/04/02/17/07/user-307993_1280.png",
     },
 });
 

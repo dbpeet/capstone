@@ -1,7 +1,8 @@
 module.exports = {
     auth: require('./authController.js'),
-    // contacts: require('./contactsController.js'),
+    events: require('./eventsController.js'),
     users: require('./usersController.js'),
-    // city: require('./cityController.js'),
-    // post: require('./postController.js'),
+    works: require('./worksController.js'),
+    genres: require('./genresController.js'),
+    home: require('./homeController'),
   };

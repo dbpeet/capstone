@@ -20,19 +20,22 @@ const workSchema = new Schema({
   sound_link: {
       type: String,
   },
-  video_link: {
+  video_id: {
       type: String,
   },
   date_posted: {
     type: Date,
     default: Date.now,
   },
-  genres: [
+  genre: 
     {
       type: Schema.Types.ObjectId,
       ref: 'Genre',
-    }
-  ],
+    },
+  artist: {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+  },
 });
 
 const Work = mongoose.model('Work', workSchema);
