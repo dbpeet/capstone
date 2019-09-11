@@ -25,8 +25,16 @@ const create = (req, res) => {
     });
 };
 
+const edit = (req, res) => {
+    db.Genre.findByIdAndUpdate(req.params.id, req.body,{ new: true }, (err, updatedGenre) => {
+        if (err) return res.status(500).json({ status: 500, message: 'Something went wrong. Please try again', });
+        res.status(200).json({ status: 200, data: updatedGenre, });
+    });
+};
+
 module.exports = {
   show,
   index,
   create,
+  edit,
 };

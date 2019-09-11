@@ -62,7 +62,6 @@ const deleteAll = (req, res) => {
 };
 
 const edit = (req, res) => {
-    console.log(req.params.id)
     db.Work.findByIdAndUpdate(req.params.id, req.body,{ new: true }, (err, updatedWork) => {
         if (err) return res.status(500).json({ status: 500, message: 'Something went wrong. Please try again', });
         res.status(200).json({ status: 200, data: updatedWork, });
