@@ -17,6 +17,7 @@ const index = (req, res) => {
   });
 }
 
+
 module.exports = {
   show,
   index,

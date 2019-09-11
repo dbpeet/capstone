@@ -10,8 +10,11 @@ router.get('/', ctrl.genres.index);
 //Get genre
 router.get('/:id', ctrl.genres.show);
 
-//Create City
+//Create Genre
 router.post('/', ctrl.genres.create);
+
+//Create Genre
+router.post('/', ctrl.genres.edit);
 
 
 module.exports = router;
