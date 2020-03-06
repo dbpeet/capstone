@@ -8,6 +8,7 @@ const routes = require('./routes');
 const app = express();
 
 app.use(cors())
+
 const PORT = process.env.PORT || 4000;
 
 // ---------------------------------------- MIDDLEWARE ---------------------------------------- //
