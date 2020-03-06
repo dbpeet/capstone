@@ -6,16 +6,6 @@ const cors = require('cors');
 const routes = require('./routes');
 
 const app = express();
-
-const corsOptions = {
-  origin: '*', // string or array
-  allowedHeaders: "*",
-    methods: ['GET', 'PUT', 'POST', 'DELETE', 'OPTIONS'],
-  credentials: true, // This allows the session cookie to be sent back and forth
-  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-}
-app.use(cors(corsOptions));
-
 const PORT = process.env.PORT || 4000;
 
 // ---------------------------------------- MIDDLEWARE ---------------------------------------- //
@@ -39,6 +29,15 @@ app.use(session({
   resave: false,
   saveUninitialized: false // Only save the session if a property has been added to req.session
 }));
+
+const corsOptions = {
+  origin: "https://capstone-frontend-artwork.herokuapp.com/", // string or array
+  allowedHeaders: "['Content-Type', 'Authorization', 'Content-Length', 'X-Requested-With', 'Accept']",
+    methods: ['GET', 'PUT', 'POST', 'DELETE', 'OPTIONS'],
+  credentials: true, // This allows the session cookie to be sent back and forth
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+app.use(cors(corsOptions));
 
 // ------------------------------------------ ROUTES ------------------------------------------ //
 
