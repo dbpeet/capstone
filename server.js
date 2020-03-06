@@ -31,7 +31,7 @@ app.use(session({
 }));
 
 const corsOptions = {
-  origin: ['https://capstone-frontend-artwork.herokuapp.com/'], // string or array
+  origin: ['*'], // string or array
   credentials: true, // This allows the session cookie to be sent back and forth
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
