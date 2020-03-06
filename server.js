@@ -8,7 +8,7 @@ const routes = require('./routes');
 const app = express();
 
 const corsOptions = {
-  origin: ["http://localhost:3000", "https://capstone-frontend-artwork.herokuapp.com/"], // string or array
+  origin: ["http://localhost:3000", "https://capstone-frontend-artwork.herokuapp.com"], // string or array
   allowedHeaders: ['Content-Type', 'Authorization', 'Content-Length', 'X-Requested-With', 'Accept'],
     methods: ['GET', 'PUT', 'POST', 'DELETE', 'OPTIONS'],
   credentials: true, // This allows the session cookie to be sent back and forth
