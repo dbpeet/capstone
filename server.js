@@ -13,9 +13,6 @@ app.use(function(req, res, next) {
   next();
 })
 
-app.options('*', cors(corsOptions));
-
-
 const PORT = process.env.PORT || 4000;
 
 // ---------------------------------------- MIDDLEWARE ---------------------------------------- //
